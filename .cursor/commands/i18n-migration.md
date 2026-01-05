@@ -30,3 +30,14 @@ const { t } = useTranslation();
 
 - 能清晰的知道 key 的含义，不用去 locales 中找，开发方便
 - 对于一些没多语的项目适用，比如 agent-tools 不需要多语
+
+### 组件外
+
+```tsx
+import { t } from 'i18next';
+
+return <div>{t('enum.InputSchemaType.STRING', 'string')}</div>;
+```
+
+- 1 特殊场景如非组件内，没法使用 hook，所以使用 `t` 函数获取翻译。
+- 2 其他同组件内
